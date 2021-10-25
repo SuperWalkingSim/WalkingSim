@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Interaction\PlayerInteraction.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\Utils\CameraFade.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Gift.cs" />
     <Compile Include="Assets\Scripts\Interactables\WeatherController.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\Optional\HeadBob.cs" />
     <Compile Include="Assets\Scripts\VFX\OutlineFeature.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\Audio\Sound.cs" />
     <Compile Include="Assets\Scripts\VFX\DepthNormalsFeature.cs" />
     <Compile Include="Assets\3rdParty\First Person Drifter Controller\Scripts\LockMouse.cs" />
+    <Compile Include="Assets\Scripts\ThirdPersonCam.cs" />
     <Compile Include="Assets\Scripts\Interaction\AudioPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
@@ -87,7 +89,6 @@
     <Compile Include="Assets\Scripts\BurstParticles.cs" />
     <Compile Include="Assets\Scripts\Interactables\ElevatorButton.cs" />
     <Compile Include="Assets\Scripts\Interactables\ElevatorDoorTrigger.cs" />
-    <Compile Include="Assets\Gift.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\PolygonPrototype\Shaders\Prototype_Glass_Global.shader" />
@@ -733,6 +734,12 @@
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
