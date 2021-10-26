@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredItem: 0
   grabbable: 1
-  audioClip: {fileID: 8300000, guid: c18ae2c530c264a6880266d5e0a71337, type: 3}
+  audioClip: {fileID: 8300000, guid: 9efab6bdb5847274f9cc3f62204fe9b0, type: 3}
   itemName: Weather Today
   image: {fileID: 21300000, guid: 11c1465344d894bf0b62fe226620a7ab, type: 3}
   rollableItem: 1
+  m_RollType: 0
   inventoryItem: 0
   collectMessage: How do you like the weather today
   meshes: []

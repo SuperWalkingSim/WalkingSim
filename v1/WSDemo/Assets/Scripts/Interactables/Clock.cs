@@ -8,17 +8,21 @@ public class Clock : Interactables
     public int m_Hour = 8;
     public int m_MaxHour = 10;
     public int m_MinHour = 7;
+    public Collider m_Bolck; 
 
     private void Awake()
     {
         m_Instance = this;
     }
-
+    private void Start()
+    {
+        m_Bolck.enabled = true;
+    }
     public override void ItemRoll()
     {
         base.ItemRoll();
 
-        m_Hour = Random.Range(m_MinHour, m_MaxHour);
+        m_Hour = m_RollResult;
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("TimeH", m_Hour);
     }
 
@@ -40,6 +44,7 @@ public class Clock : Interactables
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("TimeH", m_Hour);
         // 分支，多种可能
         UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_LeftItemBlock);
+        m_Bolck.enabled = false;
     }
 
     public override void ItemCollect()

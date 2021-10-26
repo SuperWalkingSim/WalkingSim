@@ -45,7 +45,7 @@ public class Interactables : MonoBehaviour
 
 	[Header("ROLL")]
 	[SerializeField]
-	private int m_RollResult = 0;
+	public int m_RollResult = 0;
 	//public float[] m_Possibilities = new float[3];
 
 	public int GetRollResult()
@@ -75,18 +75,21 @@ public class Interactables : MonoBehaviour
 	// envoke when roll a <rollable> item
 	virtual public void ItemRoll()
 	{
+
         if (item.m_RollType == RollType.normal)
+        {
+			// 1~6
+			m_RollResult = Random.Range(0, 6);
+			UIManager.m_Instance.SetNumberImage(m_RollResult);
+		}
+		else if(item.m_RollType == RollType.special)
         {
 			// 3 possible results: FAIL, NEUTUAL, SUCCESS
 			// possibilities for example: 1/6, 4/6, 1/6
 		}
-		else if(item.m_RollType == RollType.special)
-        {
-			//
-        }
 
 
-		if(m_RolledBlockName!="")
+		if (m_RolledBlockName!="")
 			UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_RolledBlockName);
 
 	}
