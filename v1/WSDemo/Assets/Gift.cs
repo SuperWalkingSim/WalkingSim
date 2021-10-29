@@ -29,13 +29,13 @@ public class Gift : Interactables
     public override void ItemRoll()
     {
         base.ItemRoll();
-        m_CurrentMeshId = Random.Range(m_MinIndex, m_MaxIndex);
-
+        m_CurrentMeshId = m_RollResult;
+        UIManager.m_Instance.SetNumberImage(m_RollResult);
         Debug.Log("Gift id: " + m_CurrentMeshId);
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("GiftId", m_CurrentMeshId);
 
         SetMesh(m_CurrentMeshId);
-
+        UIManager.m_Instance.SetNumberImage(m_RollResult);
     }
 
     IEnumerator SwitchGift()
@@ -74,6 +74,8 @@ public class Gift : Interactables
         {
             UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_LeftItemBlock);
         }
+
+        UIManager.m_Instance.SetGifts(m_RollResult);
 
     }
 }
