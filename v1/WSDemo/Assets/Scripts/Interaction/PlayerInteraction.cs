@@ -35,9 +35,9 @@ public class PlayerInteraction : MonoBehaviour
 
 	[SerializeField]
 	private Material m_HighlightMat;
-	[SerializeField]
 	private Material m_ItemOriginMat;
 
+	public GirlfriendController m_GirlFriend;
 	private void Awake()
 	{
 		audioPlayer = GetComponent<AudioPlayer>();
@@ -48,7 +48,9 @@ public class PlayerInteraction : MonoBehaviour
 	void Start()
     {
 		myCam = Camera.main;
-    }
+		m_GirlFriend.enabled = false;
+
+	}
 
     // Update is called once per frame
     void Update()
@@ -58,6 +60,11 @@ public class PlayerInteraction : MonoBehaviour
 	void RollItem()
     {
 		Debug.Log("YOU ROLL!!");
+		if (!GetComponent<AudioSource>().isPlaying)
+        {
+			GetComponent<AudioSource>().Play();
+		}
+			
 		currentInteractable.OnRoll.Invoke();
 	}
 	void CheckInteractables()
@@ -258,6 +265,12 @@ public class PlayerInteraction : MonoBehaviour
     public void ItemHighlight()
     {
 		currentInteractable.GetComponent<MeshRenderer>().material = m_HighlightMat;
+	}
+
+	public void ActivateGirlFriend()
+    {
+		m_GirlFriend.enabled = true;
+
 	}
 
 }

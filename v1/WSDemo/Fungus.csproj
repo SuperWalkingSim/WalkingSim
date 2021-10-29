@@ -359,8 +359,8 @@
     <Compile Include="Assets\3rdParty\Fungus\Scripts\EventHandlers\MonoBehaviour\TransformChanged.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\ScriptOptions.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Modules\ModuleRegister.cs" />
-    <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\SavePoint.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\RotateAdd.cs" />
+    <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\SavePoint.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\FungusLua\Thirdparty\MoonSharp\Interpreter\Compatibility\Frameworks\Base\FrameworkReflectionBase.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Thirdparty\LeanTween\LTDescrOptional.cs" />
     <Compile Include="Assets\3rdParty\Fungus\Scripts\Commands\Priority\FungusPriorityReset.cs" />

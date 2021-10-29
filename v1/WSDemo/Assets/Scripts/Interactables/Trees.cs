@@ -28,7 +28,7 @@ public class Trees : Interactables
     public override void ItemRoll()
     {
         base.ItemRoll();
-        m_CurrentMeshId = Random.Range(m_MinIndex, m_MaxIndex);
+        m_CurrentMeshId = m_RollResult;
 
         Debug.Log("Tree id: " + m_CurrentMeshId);
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("TreeId", m_CurrentMeshId);
