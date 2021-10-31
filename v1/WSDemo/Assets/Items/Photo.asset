@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredItem: 0
   grabbable: 1
-  audioClip: {fileID: 8300000, guid: 9efab6bdb5847274f9cc3f62204fe9b0, type: 3}
+  audioClip: {fileID: 8300000, guid: c18ae2c530c264a6880266d5e0a71337, type: 3}
   itemName: A photo
   image: {fileID: 0}
   rollableItem: 0
-  m_RollType: 0
   inventoryItem: 0
   collectMessage: 
   meshes: []
