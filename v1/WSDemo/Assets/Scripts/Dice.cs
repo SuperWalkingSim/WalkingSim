@@ -9,8 +9,6 @@ public class Dice : MonoBehaviour
 
     Vector3 initPos;
     public int diceValue;
-    AudioSource aud;
-    bool played = false;
 
     [Header("Torque")]
     public float xTorque, yTorque, zTorque;
@@ -22,11 +20,7 @@ public class Dice : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         initPos = transform.position;
         rb.useGravity = false;
-        aud = GetComponent<AudioSource>();
     }
-
-
-
 
     private void Update()
     {
@@ -36,7 +30,6 @@ public class Dice : MonoBehaviour
             Roll();
 
         }
-
     }
 
     public void SetVisibility(bool isVisible)
@@ -49,23 +42,12 @@ public class Dice : MonoBehaviour
 
         if(!thrown && !hasLanded)
         {
-            //Debug.Log("Roll it");
-            //AudioManager.m_Instance.Play("RollDice");
+            Debug.Log("Roll it");
             thrown = true;
             rb.useGravity = true;
             rb.AddTorque(Random.Range(0, xTorque), Random.Range(0, yTorque), Random.Range(0, zTorque));
         }
 
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!aud.isPlaying && !played)
-        {
-            aud.Play();
-            played = true;
-        }
-        
     }
 }

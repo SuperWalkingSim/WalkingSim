@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour{
     bool restoring = false;
     bool resetRotation = false;
     float t;
-    GameObject dice;
     
     Vector3 forward, right;
     Vector3 move, strafe;
@@ -44,9 +43,7 @@ public class PlayerMovement : MonoBehaviour{
         t = 0;
         r = 3;
         thirdCam.SetActive(false);
-        dice = transform.GetChild(0).gameObject;
-        dice.SetActive(false);
-        //fpc.gameObject.SetActive(true);
+        fpc.gameObject.SetActive(true);
     }
 
     void Update()
@@ -66,8 +63,7 @@ public class PlayerMovement : MonoBehaviour{
             //    }
             //}
             forward = new Vector3(fpc.forward.x, 0, fpc.forward.z).normalized;
-            //right = new Vector3(fpc.right.x, fpc.right.y, 0).normalized;
-            right = new Vector3(fpc.right.x, 0, fpc.right.z).normalized;
+            right = new Vector3(fpc.right.x, fpc.right.y, 0).normalized;
             transform.eulerAngles = Vector3.zero;
 
             #region 用不到的code
@@ -86,9 +82,7 @@ public class PlayerMovement : MonoBehaviour{
 
             move = Input.GetAxis("Vertical") * forward * speed;
             strafe = Input.GetAxis("Horizontal") * right * speed;
-            //Debug.Log("vertical: " + Input.GetAxis("Vertical") + "; horizontal: " + Input.GetAxis("Horizontal"));
             rb.velocity = move + strafe;
-            Debug.Log(right);
         }
 
         if (restoring && rb.velocity == Vector3.zero)
@@ -97,8 +91,7 @@ public class PlayerMovement : MonoBehaviour{
             if (t >= waitTime)
             {
                 thirdCam.SetActive(false);
-                dice.SetActive(true);
-                //fpc.gameObject.SetActive(true);
+                fpc.gameObject.SetActive(true);
                 restoring = false;
                 isFalling = false;
                 resetRotation = true;
@@ -170,7 +163,6 @@ public class PlayerMovement : MonoBehaviour{
             rb.AddForce(force);
             torque = Random.Range(10, 30);
             rb.AddTorque(transform.forward * torque);
-            dice.SetActive(true);
             thirdCam.SetActive(true);
             Debug.Log(torque);
             //fpc.gameObject.SetActive(false);
@@ -179,7 +171,30 @@ public class PlayerMovement : MonoBehaviour{
         if (isFalling && collision.gameObject.tag == "Ground")
         {
             restoring = true;
+            //float[] dist = new float[6];
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    //faces[i] = transform.GetChild(1 + i);
+            //    //Debug.Log(faces[i].position);
+            //    dist[i] = Vector3.Dot(faces[i].position, fpc.forward);
+            //    if (i > 0 && dist[i] < dist[i - 1])
+            //    {
+            //        closest = i;
+            //    }
+            //    else if (i > 0 && dist[i] > dist[i - 1])
+            //    {
+            //        closest = i - 1;
+            //    }
+            //    else
+            //    {
+            //        closest = 0;
+            //    }
+            //    //Debug.Log(faces[i].name + ": " + dist[i]);
+            //}
             
+            //Debug.Log("closest: "+faces[closest].name);
+            //ForwardFace = faces[closest].position;
+            //Debug.Log("grounded");
         }
     }
 }

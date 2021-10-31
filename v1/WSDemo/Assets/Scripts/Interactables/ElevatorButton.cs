@@ -32,7 +32,7 @@ public class ElevatorButton : Interactables
     public override void ItemRoll()
     {
         base.ItemRoll();
-        m_CurrentButton = m_RollResult;
+        m_CurrentButton = Random.Range(m_MinIndex, m_MaxIndex);
 
         Debug.Log("Button id: " + m_CurrentButton);
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("ElevatorButton", m_CurrentButton);
@@ -66,11 +66,10 @@ public class ElevatorButton : Interactables
         {
             UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_LeftItemBlock);
         }
-        OpenElevator();
-        //if (m_CurrentButton == 3)
-        //{
-        //    OpenElevator();
-        //}
+        if (m_CurrentButton == 3)
+        {
+            OpenElevator();
+        }
     }
 
     public void OpenElevator()
