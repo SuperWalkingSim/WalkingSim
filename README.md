@@ -2,13 +2,13 @@
 
 
 
-<img src="E:\Files\Tencent Files\378222467\FileRecv\MobileFile\F9E24AA677960E4BC48DA8BC7596ECD1.png" alt="F9E24AA677960E4BC48DA8BC7596ECD1" style="zoom:25%;" />
+<img src="img/dice.png" alt="F9E24AA677960E4BC48DA8BC7596ECD1" style="zoom:25%;" />
 
-MR. D6 Has A Date is a walking sim (also course work for NYU Game Center Game Studio 1) about one day of MR. D6, created by Cindy (☞ﾟヮﾟ)☞and Aris☜(ﾟヮﾟ☜).
+MR. D6 Has A Date is a walking sim (also course work for NYU Game Center Game Studio 1) about one day of MR. D6, created by (☞ﾟヮﾟ)☞Cindy and Aris☜(ﾟヮﾟ☜).
 
 
 
-<img src="E:\Files\Tencent Files\378222467\FileRecv\MobileFile\photo.png" alt="photo" style="zoom:12%;" />
+<img src="img\photo.png" alt="photo" style="zoom:12%;" />
 
 ## Platform
 
