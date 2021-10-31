@@ -12,7 +12,6 @@ public class WeatherThumbnail : Interactables
 
     public Animator m_Anim;
 
-
     private void Awake()
     {
         m_Instance = this;
@@ -32,7 +31,7 @@ public class WeatherThumbnail : Interactables
     public override void ItemRoll()
     {
         base.ItemRoll();
-        m_CurrentMeshId = m_RollResult;
+        m_CurrentMeshId = Random.Range(m_MinIndex, m_MaxIndex);
 
         Debug.Log("Weather id: " + m_CurrentMeshId);
         UIManager.m_Instance.m_Flowchart.SetIntegerVariable("WeatherId", m_CurrentMeshId);
@@ -73,22 +72,6 @@ public class WeatherThumbnail : Interactables
             UIManager.m_Instance.m_Flowchart.ExecuteBlock(m_LeftItemBlock);
         }
 
-
-        if (m_CurrentMeshId < 2)
-        {
-            // Rain
-            UIManager.m_Instance.SetClothes(0);
-
-        }else if (m_CurrentMeshId < 4)
-        {
-            // cloudy
-            UIManager.m_Instance.SetClothes(1);
-        }
-        else
-        {
-            // Sunny
-            UIManager.m_Instance.SetClothes(2);
-        }
     }
 
 }
